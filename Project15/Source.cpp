@@ -55,13 +55,13 @@ void znach(int *a, int n, int p) {
 	}
 	
 	if (more > less) {
-		cout << "����� > P - ������" << endl;
+		cout << "×èñåë > P - áîëüøå" << endl;
 		cout << more << endl;
 	}
 		
 	
 	else {
-		cout << "����� < P - ������" << endl;
+		cout << "×èñåë < P - áîëüøå" << endl;
 		cout << less << endl;
 	}
 		
@@ -76,19 +76,10 @@ void summ(int *a, int n, int p, int k) {
 	{
 			
 		if (a[i] < p || a[i]>k)
-			d++;
+			d=d+a[i];
 	}
-
-	if (more > less) {
-		cout << "����� > P - ������" << endl;
-		cout << more << endl;
-	}
-
-
-	else {
-		cout << "����� < P - ������" << endl;
-		cout << less << endl;
-	}
+	cout << "Summ =" << d << endl;
+	
 
 
 
@@ -97,8 +88,8 @@ void summ(int *a, int n, int p, int k) {
 int main()
 {
 	setlocale(LC_ALL, "");
-	
-	int a[10];
+	//Используя указатели в упорядоченном по возрастанию массиве выяснить, что больше элементов со значением > Р или элементов со значением < Р.
+	/*int a[10];
 	int n = 10, p = 0;
 	cout << "Enter P" << endl;
 	cin >> p;
@@ -106,7 +97,22 @@ int main()
 	printArray(a, n);
 	bubblesort(a, n, asc);
 	printArray(a, n);
-	znach(a, n, p);
+	znach(a, n, p);*/
+	
+	//. Используя указатели в упорядоченном по возрастанию массиве подсчитать сумму элементов, расположенных за элементом со значением Р и до элемента со значением К ( Р > К ).
+
+
+	int a[10];
+	int n = 10, p = 0, k=0;
+	cout << "Enter P" << endl;
+	cin >> p;
+	cout << "Enter K" << endl;
+	cin >> k;
+	fillArray(a, n);
+	printArray(a, n);
+	bubblesort(a, n, asc);
+	printArray(a, n);
+	summ(a, n, p, k);
 
 
 	system("pause");
